@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Biblioteca Atenea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="encabezado" class="encabezado"></header>
+
+    <main id="contenido" class="contenedor oculto">
+        <section class="cabecera cabecera-con-controles">
+            <div>
+                <h1>Dashboard</h1>
+                <p class="texto-suave">Estado de los préstamos y libros más solicitados.</p>
+            </div>
+            <div class="campo">
+                <label for="periodo">Período</label>
+                <select id="periodo">
+                    <option value="0">Todo el historial</option>
+                    <option value="30">Últimos 30 días</option>
+                    <option value="90">Últimos 90 días</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="indicadores" class="indicadores"></section>
+
+        <section class="graficos">
+            <article class="panel">
+                <h2>Estado de los préstamos</h2>
+                <p class="texto-suave">Hacé clic en una columna para ver esos préstamos.</p>
+                <div id="grafico-estados" class="grafico columnas"></div>
+            </article>
+            <article class="panel">
+                <h2>Préstamos por género</h2>
+                <div id="grafico-generos" class="grafico"></div>
+            </article>
+            <article class="panel grafico-ancho">
+                <h2>Top 5 libros más solicitados</h2>
+                <div id="grafico-libros" class="grafico"></div>
+            </article>
+        </section>
+
+        <section class="panel seccion">
+            <h2>Últimas solicitudes</h2>
+            <div class="tabla-contenedor">
+                <table class="tabla">
+                    <thead>
+                        <tr><th>Socio</th><th>Libro</th><th>Fecha</th><th>Estado</th></tr>
+                    </thead>
+                    <tbody id="tabla-ultimos"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="mensaje" class="mensaje oculto"></div>
+
+    <footer class="pie">
+        <p>&copy; 2026 Biblioteca Atenea</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/admin-dashboard.js"></script>
+</body>
+</html>

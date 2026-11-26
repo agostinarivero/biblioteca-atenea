@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros - Biblioteca Atenea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="encabezado" class="encabezado"></header>
+
+    <main id="contenido" class="contenedor oculto">
+        <section class="cabecera">
+            <h1>Inventario de libros</h1>
+            <p id="resumen" class="texto-suave">Alta, baja y modificación de libros.</p>
+        </section>
+
+        <div class="dos-columnas">
+            <section class="panel">
+                <h2 id="titulo-form">Nuevo libro</h2>
+                <form id="form-libro" class="formulario">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" maxlength="120">
+
+                    <label for="autor">Autor</label>
+                    <input type="text" id="autor" maxlength="80">
+
+                    <label for="genero">Género</label>
+                    <input type="text" id="genero" maxlength="40">
+
+                    <label for="isbn">ISBN (10 o 13 números)</label>
+                    <input type="text" id="isbn" placeholder="9788437604572">
+
+                    <label for="portada">URL de la portada (opcional)</label>
+                    <input type="text" id="portada" placeholder="https://...">
+
+                    <label class="check"><input type="checkbox" id="disponible" checked> Disponible para préstamo</label>
+
+                    <p id="error-libro" class="error"></p>
+                    <div class="botones">
+                        <button type="submit" class="btn">Guardar</button>
+                        <button type="button" id="btn-cancelar" class="btn btn-secundario">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section>
+                <div class="filtros">
+                    <div class="campo campo-busqueda">
+                        <label for="buscador">Buscar</label>
+                        <input type="search" id="buscador" placeholder="Título, autor o ISBN">
+                    </div>
+                    <div class="campo">
+                        <label for="filtro-genero">Género</label>
+                        <select id="filtro-genero"></select>
+                    </div>
+                    <div class="campo">
+                        <label for="filtro-disponible">Disponibilidad</label>
+                        <select id="filtro-disponible">
+                            <option value="">Todos</option>
+                            <option value="si">Disponibles</option>
+                            <option value="no">Prestados</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="panel tabla-contenedor">
+                    <table class="tabla">
+                        <thead>
+                            <tr><th>Libro</th><th>Género</th><th>ISBN</th><th>Estado</th><th>Acciones</th></tr>
+                        </thead>
+                        <tbody id="tabla-libros"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="mensaje" class="mensaje oculto"></div>
+
+    <footer class="pie">
+        <p>&copy; 2026 Biblioteca Atenea</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/admin-libros.js"></script>
+</body>
+</html>

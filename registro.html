@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - Biblioteca Atenea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="encabezado" class="encabezado"></header>
+
+    <main class="contenedor">
+        <section class="panel panel-form">
+            <h1>Hacete socio</h1>
+            <form id="form-registro" class="formulario">
+                <label for="nombre">Nombre y apellido</label>
+                <input type="text" id="nombre" maxlength="60" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="nombre@correo.com" required>
+
+                <label for="password">Contraseña (mínimo 6 caracteres)</label>
+                <input type="password" id="password" required>
+
+                <label for="confirmar">Repetir contraseña</label>
+                <input type="password" id="confirmar" required>
+
+                <p id="error-registro" class="error"></p>
+                <button type="submit" class="btn btn-bloque">Crear cuenta</button>
+            </form>
+            <p class="centrado">¿Ya tenés cuenta? <a href="login.html">Iniciá sesión</a></p>
+        </section>
+    </main>
+
+    <div id="mensaje" class="mensaje oculto"></div>
+
+    <footer class="pie">
+        <p>&copy; 2026 Biblioteca Atenea</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/registro.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Atenea - Préstamo de libros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="encabezado" class="encabezado"></header>
+
+    <main>
+        <section class="hero">
+            <div class="contenedor">
+                <h1>Tu biblioteca</h1>
+                <p>Explorá el catálogo, pedí libros desde tu casa y consultá las fechas de devolución.</p>
+                <div id="acciones" class="hero-acciones">
+                    <a class="btn btn-acento" href="registro.html">Hacete socio</a>
+                    <a class="btn btn-claro" href="login.html">Ya tengo cuenta</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="contenedor">
+            <section class="panel info-prestamos">
+                <h2>¿Cómo funcionan los préstamos?</h2>
+                <ul class="lista">
+                    <li>Cada socio puede tener hasta 3 libros a la vez.</li>
+                    <li>El préstamo dura 14 días desde que retirás el libro.</li>
+                    <li>Las fechas de devolución se ven en "Mis préstamos".</li>
+                </ul>
+            </section>
+
+            <section class="seccion">
+                <h2>Algunos títulos del catálogo</h2>
+                <p class="texto-suave">Registrate para ver el catálogo completo y solicitar tu libro.</p>
+                <div id="destacados" class="grilla-libros"></div>
+            </section>
+        </div>
+    </main>
+
+    <div id="mensaje" class="mensaje oculto"></div>
+
+    <footer class="pie">
+        <p>&copy; 2026 Biblioteca Atenea</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/inicio.js"></script>
+</body>
+</html>

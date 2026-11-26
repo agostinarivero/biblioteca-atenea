@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis préstamos - Biblioteca Atenea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="encabezado" class="encabezado"></header>
+
+    <main id="contenido" class="contenedor oculto">
+        <section class="cabecera">
+            <h1>Mis préstamos</h1>
+            <p class="texto-suave">Tus préstamos activos, las fechas límite y tu historial.</p>
+        </section>
+
+        <section id="resumen" class="indicadores"></section>
+
+        <div class="pestanas">
+            <button type="button" class="pestana activa" data-vista="activos">Activos (<span>0</span>)</button>
+            <button type="button" class="pestana" data-vista="historial">Historial (<span>0</span>)</button>
+            <button type="button" class="pestana" data-vista="todos">Todos (<span>0</span>)</button>
+        </div>
+
+        <section id="lista-prestamos" class="lista-prestamos"></section>
+    </main>
+
+    <div id="mensaje" class="mensaje oculto"></div>
+
+    <footer class="pie">
+        <p>&copy; 2026 Biblioteca Atenea</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/mis-prestamos.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil - Biblioteca Atenea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="encabezado" class="encabezado"></header>
+
+    <main id="contenido" class="contenedor oculto">
+        <section class="cabecera">
+            <h1>Mi perfil</h1>
+            <p class="texto-suave">Tus datos personales de socio.</p>
+        </section>
+
+        <div class="dos-columnas">
+            <section class="panel">
+                <h2>Datos personales</h2>
+                <form id="form-datos" class="formulario">
+                    <label for="nombre">Nombre y apellido</label>
+                    <input type="text" id="nombre" maxlength="60" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+
+                    <p id="error-datos" class="error"></p>
+                    <button type="submit" class="btn">Guardar cambios</button>
+                </form>
+            </section>
+
+            <section class="panel">
+                <h2>Cambiar contraseña</h2>
+                <form id="form-password" class="formulario">
+                    <label for="actual">Contraseña actual</label>
+                    <input type="password" id="actual" required>
+
+                    <label for="nueva">Nueva contraseña (mínimo 6 caracteres)</label>
+                    <input type="password" id="nueva" required>
+
+                    <label for="confirmar">Repetir nueva contraseña</label>
+                    <input type="password" id="confirmar" required>
+
+                    <p id="error-password" class="error"></p>
+                    <button type="submit" class="btn">Actualizar contraseña</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <div id="mensaje" class="mensaje oculto"></div>
+
+    <footer class="pie">
+        <p>&copy; 2026 Biblioteca Atenea</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/perfil.js"></script>
+</body>
+</html>

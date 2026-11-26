@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de ejemplo - Biblioteca Atenea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="encabezado" class="encabezado"></header>
+
+    <main class="contenedor">
+        <section class="panel panel-angosto">
+            <h1>Carga de datos de ejemplo</h1>
+            <p>Esta página carga datos de prueba en MockAPI:</p>
+            <ul class="lista">
+                <li>Un administrador (admin@biblioteca.com / admin123), solo si no existe ninguno.</li>
+                <li>Dos socios: maria@test.com (contraseña 123456) y lucas@biblioteca.com (contraseña socio123), solo si no existen.</li>
+                <li>12 libros, solo si no hay libros cargados.</li>
+                <li>Préstamos con distintos estados, solo si no hay préstamos cargados.</li>
+            </ul>
+            <p class="nota">Se puede ejecutar más de una vez: no duplica lo que ya existe.</p>
+            <button type="button" id="btn-cargar" class="btn">Cargar datos de ejemplo</button>
+            <ul id="registro" class="registro oculto"></ul>
+        </section>
+    </main>
+
+    <div id="mensaje" class="mensaje oculto"></div>
+
+    <footer class="pie">
+        <p>&copy; 2026 Biblioteca Atenea</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/setup.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" viewBox="0 0 200 300">
+    <rect width="200" height="300" fill="#e8edf3"/>
+    <rect x="15" y="15" width="170" height="270" fill="none" stroke="#4a6a94" stroke-width="3"/>
+    <text x="100" y="145" font-family="Georgia, serif" font-size="22" fill="#1e3a5f" text-anchor="middle">Sin</text>
+    <text x="100" y="175" font-family="Georgia, serif" font-size="22" fill="#1e3a5f" text-anchor="middle">portada</text>
+</svg>

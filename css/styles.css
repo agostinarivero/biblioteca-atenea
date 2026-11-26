@@ -1,0 +1,1090 @@
+/* Estilos generales - Biblioteca Atenea */
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1b2a3d;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', Georgia, serif;
+    color: #1e3a5f;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.1rem; }
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: #1e3a5f;
+}
+
+img {
+    max-width: 100%;
+}
+
+input, select, button {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* clases de ayuda */
+.oculto {
+    display: none !important;
+}
+
+.texto-suave {
+    color: #5b6b7f;
+}
+
+.centrado {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* encabezado y menú */
+.encabezado {
+    background-color: #ffffff;
+    color: #1e3a5f;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 3px solid #e1ecfb;
+    box-shadow: 0 2px 10px rgba(30, 58, 95, 0.08);
+}
+
+.barra-superior {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 4.2rem;
+}
+
+.logo {
+    color: #1e3a5f;
+    text-decoration: none;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-left: 4px solid #1e3a5f;
+    padding-left: 0.6rem;
+}
+
+.btn-menu {
+    background: none;
+    border: 1px solid #1e3a5f;
+    color: #1e3a5f;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* en celular el menú está oculto hasta tocar el botón */
+.menu {
+    display: none;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.menu.abierto {
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 0.5rem 0.9rem;
+    color: #4b5b70;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu a:hover {
+    background-color: #eef2f7;
+    color: #1e3a5f;
+}
+
+.menu a.activo {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.usuario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e1ecfb;
+    font-size: 0.9rem;
+}
+
+/* en pantallas grandes el menú queda en una sola fila */
+@media (min-width: 900px) {
+    .btn-menu {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        width: auto;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .menu ul {
+        display: flex;
+        gap: 0.25rem;
+    }
+
+    .usuario {
+        margin: 0;
+        padding: 0 0 0 1.5rem;
+        border-top: none;
+        border-left: 1px solid #e1ecfb;
+    }
+}
+
+/* botones */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #1e3a5f;
+    border-radius: 8px;
+    background-color: #1e3a5f;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    background-color: #1e3a5f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(30, 58, 95, 0.15);
+}
+
+.btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secundario {
+    background-color: #ffffff;
+    color: #1e3a5f;
+    border-color: #cfd8e3;
+}
+
+.btn-secundario:hover {
+    background-color: #eef2f7;
+}
+
+.btn-acento {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #1e3a5f;
+}
+
+.btn-acento:hover {
+    background-color: #d0e0f7;
+}
+
+.btn-claro {
+    background: none;
+    border-color: #1e3a5f;
+    color: #1e3a5f;
+}
+
+.btn-claro:hover {
+    background-color: #1e3a5f;
+    color: #ffffff;
+}
+
+/* botón de eliminar: borde verde oscuro para diferenciarlo de los demás */
+.btn-peligro {
+    background-color: #ffffff;
+    border-color: #1b2a3d;
+    color: #1b2a3d;
+}
+
+.btn-peligro:hover {
+    background-color: #1b2a3d;
+    color: #ffffff;
+}
+
+.btn-chico {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.85rem;
+}
+
+.btn-bloque {
+    width: 100%;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* paneles y estructura de páginas */
+.panel {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.08);
+}
+
+/* login y registro: tarjeta centrada con una franja de color arriba */
+.panel-form {
+    max-width: 440px;
+    margin: 3rem auto;
+    border-top: 5px solid #1e3a5f;
+    box-shadow: 0 8px 24px rgba(30, 58, 95, 0.12);
+}
+
+.panel-form h1 {
+    text-align: center;
+}
+
+.panel-angosto {
+    max-width: 720px;
+    margin: 2rem auto;
+}
+
+.cabecera {
+    margin: 2rem 0 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e1ecfb;
+}
+
+.cabecera-con-controles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.seccion {
+    margin: 2rem 0;
+}
+
+.dos-columnas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    align-items: start;
+}
+
+@media (min-width: 960px) {
+    .dos-columnas {
+        grid-template-columns: 340px 1fr;
+    }
+}
+
+/* formularios */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.formulario label,
+.campo label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1e3a5f;
+}
+
+.formulario input,
+.formulario select,
+.campo input,
+.campo select,
+.acciones select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #cfd8e3;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-bottom: 0.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.acciones select {
+    width: auto;
+    margin: 0;
+    padding: 0.35rem 0.6rem;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #1e3a5f;
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.2);
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.formulario .check input {
+    width: auto;
+    margin: 0;
+}
+
+.error {
+    color: #1b2a3d;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.nota {
+    background-color: #eef2f7;
+    border-left: 4px solid #9db4d3;
+    border-radius: 6px;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+}
+
+/* barra de filtros: una columna en celular, varias en pantallas grandes */
+.filtros {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    align-items: end;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.08);
+}
+
+.filtros .campo input,
+.filtros .campo select {
+    margin-bottom: 0;
+}
+
+@media (min-width: 640px) {
+    .filtros {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .campo-busqueda {
+        grid-column: 1 / 3;
+    }
+}
+
+@media (min-width: 1024px) {
+    .filtros {
+        grid-template-columns: 2fr 1fr 1fr auto auto;
+    }
+
+    .campo-busqueda {
+        grid-column: auto;
+    }
+}
+
+/* inicio */
+.hero {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    padding: 4.5rem 0;
+}
+
+.hero h1 {
+    color: #ffffff;
+    font-size: 2.6rem;
+}
+
+.hero p {
+    max-width: 50ch;
+    font-size: 1.15rem;
+    color: #dbe4ef;
+}
+
+/* sobre el fondo azul de la portada el botón va en blanco */
+.hero .btn-claro {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.hero .btn-claro:hover {
+    background-color: #ffffff;
+    color: #1e3a5f;
+}
+
+.hero-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+}
+
+.info-prestamos {
+    margin-top: 2rem;
+}
+
+.info-prestamos .lista {
+    margin-bottom: 0;
+}
+
+/* cards de libros */
+.grilla-libros {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(30, 58, 95, 0.18);
+}
+
+.portada {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    background-color: #e8edf3;
+}
+
+.portada-chica {
+    width: 96px;
+    height: 144px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(30, 58, 95, 0.2);
+}
+
+.portada-mini {
+    width: 48px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(30, 58, 95, 0.2);
+}
+
+.card-cuerpo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+    padding: 1rem;
+}
+
+.card-cuerpo h2,
+.card-cuerpo h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* separa los libros destacados de la frase de arriba */
+.seccion .grilla-libros {
+    margin-top: 1.5rem;
+}
+
+/* en la portada se muestran 4 libros: en pantallas grandes ocupan todo el ancho */
+@media (min-width: 900px) {
+    .seccion .grilla-libros {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    .seccion .portada {
+        height: 370px;
+    }
+}
+
+.card-cuerpo .btn {
+    margin-top: auto;
+    padding: 0.55rem 0.5rem;
+    font-size: 0.9rem;
+}
+
+.autor {
+    color: #5b6b7f;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.dato {
+    font-size: 0.8rem;
+    color: #8a97a8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.disponibilidad {
+    align-self: flex-start;
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    margin: 0.3rem 0 0.6rem;
+}
+
+.disponibilidad.si {
+    background-color: #e1ecfb;
+    color: #1e3a5f;
+}
+
+.disponibilidad.no {
+    background-color: #1e3a5f;
+    color: #ffffff;
+}
+
+/* etiquetas de estado de préstamo */
+.estado {
+    display: inline-block;
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    background-color: #eef2f7;
+}
+
+/* mismos colores que el gráfico de estados del dashboard */
+.estado.solicitado { background-color: #dbeafe; color: #1d4ed8; }
+.estado.en-prestamo { background-color: #fef3c7; color: #b45309; }
+.estado.devuelto { background-color: #ccfbf1; color: #0f766e; }
+.estado.vencido { background-color: #fee2e2; color: #b91c1c; }
+
+.rol {
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: bold;
+    background-color: #eef2f7;
+}
+
+.rol-admin {
+    background-color: #eef2f7;
+    color: #1e3a5f;
+}
+
+/* ventana modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 58, 95, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    z-index: 20;
+}
+
+.modal-contenido {
+    background-color: #ffffff;
+    border-radius: 14px;
+    border-top: 5px solid #9db4d3;
+    padding: 1.75rem;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 15px 40px rgba(30, 58, 95, 0.3);
+}
+
+.detalle {
+    display: flex;
+    gap: 1.25rem;
+    margin: 1rem 0;
+}
+
+.modal-botones {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* tablas: con pantallas chicas se desplazan hacia el costado */
+.tabla-contenedor {
+    overflow-x: auto;
+    padding: 0;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.tabla th,
+.tabla td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e8edf3;
+    vertical-align: middle;
+}
+
+.tabla th {
+    background-color: #e8edf3;
+    color: #1e3a5f;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* filas intercaladas para leer mejor la tabla */
+.tabla tbody tr:nth-child(even) {
+    background-color: #f4f6f9;
+}
+
+.tabla tbody tr:hover {
+    background-color: #eef2f7;
+}
+
+.tabla small {
+    color: #5b6b7f;
+}
+
+.celda-libro {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.acciones {
+    white-space: nowrap;
+}
+
+/* indicadores (dashboard y mis préstamos) */
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.indicador {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border-top: 4px solid #1e3a5f;
+    padding: 1rem 1.25rem;
+    color: #5b6b7f;
+    font-size: 0.85rem;
+    box-shadow: 0 6px 16px rgba(30, 58, 95, 0.12);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+/* efecto flotante: al pasar el mouse la tarjeta sube y la sombra crece */
+.indicador:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(30, 58, 95, 0.2);
+}
+
+.indicador .numero {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e3a5f;
+}
+
+/* en el dashboard cada indicador tiene su color */
+#indicadores .indicador:nth-child(1) { border-top-color: #1e3a5f; }
+#indicadores .indicador:nth-child(2) { border-top-color: #3b82f6; }
+#indicadores .indicador:nth-child(3) { border-top-color: #f59e0b; }
+#indicadores .indicador:nth-child(4) { border-top-color: #14b8a6; }
+#indicadores .indicador:nth-child(5) { border-top-color: #ef4444; }
+#indicadores .indicador:nth-child(6) { border-top-color: #8b5cf6; }
+
+.indicador.alerta .numero {
+    color: #ef4444;
+}
+
+/* colores de los gráficos */
+.color-1 { background-color: #1e3a5f; }
+.color-2 { background-color: #3b82f6; }
+.color-3 { background-color: #14b8a6; }
+.color-4 { background-color: #f59e0b; }
+.color-5 { background-color: #ef4444; }
+.color-6 { background-color: #8b5cf6; }
+
+/* gráficos */
+.graficos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+    .graficos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grafico-ancho {
+        grid-column: 1 / 3;
+    }
+}
+
+.grafico {
+    margin-top: 1rem;
+}
+
+/* 1) columnas verticales: estados de los préstamos */
+.columnas {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 0.75rem;
+    height: 260px;
+}
+
+.columna-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 0.3rem;
+    transition: background-color 0.2s;
+}
+
+.columna-item:hover {
+    background-color: #eef2f7;
+}
+
+.columna-valor {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #1e3a5f;
+}
+
+/* el fondo ocupa el alto libre y la columna crece desde abajo */
+.columna-fondo {
+    flex: 1;
+    width: 100%;
+    max-width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.columna {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.columna.solicitado { background-color: #3b82f6; }
+.columna.en-prestamo { background-color: #f59e0b; }
+.columna.devuelto { background-color: #14b8a6; }
+.columna.vencido { background-color: #ef4444; }
+
+.columna-nombre {
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.columna-nombre small {
+    display: block;
+    color: #5b6b7f;
+}
+
+/* 2) barra apilada con leyenda: préstamos por género */
+.apilada {
+    display: flex;
+    height: 2.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+.leyenda {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.leyenda li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.punto {
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* 3) ranking con barras horizontales: libros más pedidos */
+.ranking-fila {
+    display: grid;
+    grid-template-columns: 2rem 11rem 1fr 3rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.45rem 0;
+}
+
+.ranking-pos {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.barra-nombre {
+    font-size: 0.9rem;
+}
+
+.barra-fondo {
+    display: block;
+    height: 1.4rem;
+    background-color: #eef2f7;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.barra {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+}
+
+.barra-valor {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #1e3a5f;
+}
+
+/* mis préstamos */
+.pestanas {
+    display: flex;
+    gap: 0.25rem;
+    border-bottom: 2px solid #e1ecfb;
+    margin-bottom: 1.25rem;
+}
+
+.pestana {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    padding: 0.6rem 1rem;
+    font-weight: bold;
+    color: #5b6b7f;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.pestana:hover {
+    color: #1e3a5f;
+}
+
+.pestana.activa {
+    color: #1e3a5f;
+    border-bottom-color: #9db4d3;
+}
+
+.lista-prestamos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .lista-prestamos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.tarjeta-prestamo {
+    display: flex;
+    gap: 1rem;
+    background-color: #ffffff;
+    border-left: 6px solid #e1ecfb;
+    border-radius: 12px;
+    padding: 1.1rem;
+    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.08);
+}
+
+.tarjeta-prestamo p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+}
+
+.borde-solicitado { border-left-color: #3b82f6; }
+.borde-en-prestamo { border-left-color: #f59e0b; }
+.borde-devuelto { border-left-color: #14b8a6; }
+.borde-vencido { border-left-color: #ef4444; }
+
+.aviso {
+    font-weight: bold;
+}
+
+.aviso.ok { color: #1e3a5f; }
+.aviso.alerta { color: #4a6a94; }
+.aviso.peligro { color: #1b2a3d; }
+
+/* mensajes de carga, vacío y avisos */
+.cargando,
+.vacio {
+    grid-column: 1 / -1;
+    padding: 2.5rem 1rem;
+    text-align: center;
+    color: #5b6b7f;
+}
+
+.vacio {
+    border: 2px dashed #cfd8e3;
+    border-radius: 12px;
+}
+
+.mensaje {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    max-width: 420px;
+    padding: 0.9rem 1.2rem;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 600;
+    z-index: 30;
+    box-shadow: 0 8px 20px rgba(30, 58, 95, 0.25);
+}
+
+.mensaje-ok { background-color: #1e3a5f; }
+.mensaje-error { background-color: #1b2a3d; }
+.mensaje-alerta { background-color: #1e3a5f; }
+
+/* setup */
+.lista {
+    margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.registro {
+    list-style: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    max-height: 340px;
+    overflow: auto;
+    background-color: #1b2a3d;
+    color: #eef2f7;
+    border-radius: 8px;
+    font-family: Consolas, monospace;
+    font-size: 0.85rem;
+}
+
+/* pie */
+.pie {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.pie p {
+    margin: 0;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+/* ajustes para celulares chicos */
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+
+    .grilla-libros {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .portada {
+        height: 200px;
+    }
+
+    .ranking-fila {
+        grid-template-columns: 2rem 6rem 1fr 2rem;
+    }
+
+    .leyenda {
+        grid-template-columns: 1fr;
+    }
+
+    .detalle {
+        flex-direction: column;
+    }
+}

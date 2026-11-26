@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Biblioteca Atenea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header id="encabezado" class="encabezado"></header>
+
+    <main id="contenido" class="contenedor oculto">
+        <section class="cabecera">
+            <h1>Catálogo</h1>
+            <p class="texto-suave">Explorá los libros y pedí tu préstamo online.</p>
+        </section>
+
+        <section class="filtros">
+            <div class="campo campo-busqueda">
+                <label for="buscador">Buscar</label>
+                <input type="search" id="buscador" placeholder="Título, autor o ISBN">
+            </div>
+            <div class="campo">
+                <label for="filtro-genero">Género</label>
+                <select id="filtro-genero"></select>
+            </div>
+            <div class="campo">
+                <label for="filtro-autor">Autor</label>
+                <select id="filtro-autor"></select>
+            </div>
+            <label class="check"><input type="checkbox" id="solo-disponibles"> Solo disponibles</label>
+            <button type="button" id="btn-limpiar" class="btn btn-secundario">Limpiar</button>
+        </section>
+
+        <p id="contador" class="texto-suave"></p>
+        <section id="grilla-libros" class="grilla-libros"></section>
+    </main>
+
+    <!-- Ventana para confirmar la solicitud de préstamo -->
+    <div id="modal" class="modal oculto">
+        <div class="modal-contenido">
+            <h2>Solicitar préstamo</h2>
+            <div id="detalle" class="detalle"></div>
+            <p class="nota">El plazo de devolución empieza a contar cuando retirás el libro en la biblioteca.</p>
+            <p id="error-modal" class="error"></p>
+            <div class="modal-botones">
+                <button type="button" id="btn-cancelar" class="btn btn-secundario">Cancelar</button>
+                <button type="button" id="btn-confirmar" class="btn">Confirmar solicitud</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mensaje" class="mensaje oculto"></div>
+
+    <footer class="pie">
+        <p>&copy; 2026 Biblioteca Atenea</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/paginas/catalogo.js"></script>
+</body>
+</html>
