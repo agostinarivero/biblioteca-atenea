@@ -12,6 +12,7 @@ Los datos se guardan en MockAPI.
 2. Usuarios de prueba:
    - Administrador: admin@biblioteca.com / admin123
    - Socio: maria@test.com / 123456
+   - Socio: lucas@biblioteca.com / socio123
 
 ## MockAPI
 

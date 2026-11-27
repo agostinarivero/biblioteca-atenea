@@ -290,11 +290,6 @@ input, select, button {
     text-align: center;
 }
 
-.panel-angosto {
-    max-width: 720px;
-    margin: 2rem auto;
-}
-
 .cabecera {
     margin: 2rem 0 1.25rem;
 }
