@@ -98,8 +98,6 @@ input, select, button {
     font-size: 1.3rem;
     font-weight: bold;
     letter-spacing: 1px;
-    border-left: 4px solid #1e3a5f;
-    padding-left: 0.6rem;
 }
 
 .btn-menu {
@@ -132,7 +130,6 @@ input, select, button {
     color: #4b5b70;
     text-decoration: none;
     border-radius: 6px;
-    transition: background-color 0.2s, color 0.2s;
 }
 
 .menu a:hover {
@@ -196,20 +193,16 @@ input, select, button {
     text-decoration: none;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    transition: background-color 0.2s;
 }
 
 .btn:hover {
-    background-color: #1e3a5f;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(30, 58, 95, 0.15);
+    background-color: #2c5282;
 }
 
 .btn:disabled {
     opacity: 0.55;
     cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
 }
 
 .btn-secundario {
@@ -243,7 +236,7 @@ input, select, button {
     color: #ffffff;
 }
 
-/* botón de eliminar: borde verde oscuro para diferenciarlo de los demás */
+/* botón de eliminar: blanco con borde oscuro para diferenciarlo de los demás */
 .btn-peligro {
     background-color: #ffffff;
     border-color: #1b2a3d;
@@ -271,20 +264,26 @@ input, select, button {
 }
 
 /* paneles y estructura de páginas */
-.panel {
+.panel,
+.filtros,
+.card,
+.indicador,
+.tarjeta-prestamo,
+.modal-contenido {
     background-color: #ffffff;
     border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.25rem;
-    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.08);
+    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.1);
 }
 
-/* login y registro: tarjeta centrada con una franja de color arriba */
+.panel {
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+/* login y registro: tarjeta centrada */
 .panel-form {
     max-width: 440px;
     margin: 3rem auto;
-    border-top: 5px solid #1e3a5f;
-    box-shadow: 0 8px 24px rgba(30, 58, 95, 0.12);
 }
 
 .panel-form h1 {
@@ -298,8 +297,6 @@ input, select, button {
 
 .cabecera {
     margin: 2rem 0 1.25rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #e1ecfb;
 }
 
 .cabecera-con-controles {
@@ -352,7 +349,6 @@ input, select, button {
     border-radius: 8px;
     background-color: #ffffff;
     margin-bottom: 0.5rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .acciones select {
@@ -365,7 +361,6 @@ input:focus,
 select:focus {
     outline: none;
     border-color: #1e3a5f;
-    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.2);
 }
 
 .check {
@@ -400,11 +395,8 @@ select:focus {
     grid-template-columns: 1fr;
     gap: 0.75rem;
     align-items: end;
-    background-color: #ffffff;
-    border-radius: 12px;
     padding: 1rem 1.25rem;
     margin-bottom: 1.5rem;
-    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.08);
 }
 
 .filtros .campo input,
@@ -487,10 +479,7 @@ select:focus {
 .card {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
-    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -511,7 +500,6 @@ select:focus {
     height: 144px;
     object-fit: cover;
     border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(30, 58, 95, 0.2);
 }
 
 .portada-mini {
@@ -519,7 +507,6 @@ select:focus {
     height: 72px;
     object-fit: cover;
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(30, 58, 95, 0.2);
 }
 
 .card-cuerpo {
@@ -568,16 +555,22 @@ select:focus {
 .dato {
     font-size: 0.8rem;
     color: #8a97a8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.disponibilidad {
-    align-self: flex-start;
+/* etiquetas redondeadas: disponibilidad, estado y rol */
+.disponibilidad,
+.estado,
+.rol {
+    display: inline-block;
     padding: 0.15rem 0.7rem;
     border-radius: 999px;
     font-size: 0.78rem;
     font-weight: bold;
+    background-color: #eef2f7;
+}
+
+.disponibilidad {
+    align-self: flex-start;
     margin: 0.3rem 0 0.6rem;
 }
 
@@ -591,29 +584,11 @@ select:focus {
     color: #ffffff;
 }
 
-/* etiquetas de estado de préstamo */
-.estado {
-    display: inline-block;
-    padding: 0.15rem 0.7rem;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: bold;
-    background-color: #eef2f7;
-}
-
 /* mismos colores que el gráfico de estados del dashboard */
 .estado.solicitado { background-color: #dbeafe; color: #1d4ed8; }
 .estado.en-prestamo { background-color: #fef3c7; color: #b45309; }
 .estado.devuelto { background-color: #ccfbf1; color: #0f766e; }
 .estado.vencido { background-color: #fee2e2; color: #b91c1c; }
-
-.rol {
-    padding: 0.15rem 0.7rem;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: bold;
-    background-color: #eef2f7;
-}
 
 .rol-admin {
     background-color: #eef2f7;
@@ -636,9 +611,6 @@ select:focus {
 }
 
 .modal-contenido {
-    background-color: #ffffff;
-    border-radius: 14px;
-    border-top: 5px solid #9db4d3;
     padding: 1.75rem;
     width: 100%;
     max-width: 520px;
@@ -684,20 +656,11 @@ select:focus {
     color: #1e3a5f;
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 /* filas intercaladas para leer mejor la tabla */
 .tabla tbody tr:nth-child(even) {
     background-color: #f4f6f9;
-}
-
-.tabla tbody tr:hover {
-    background-color: #eef2f7;
-}
-
-.tabla small {
-    color: #5b6b7f;
 }
 
 .celda-libro {
@@ -721,20 +684,10 @@ select:focus {
 .indicador {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
-    border-radius: 12px;
     border-top: 4px solid #1e3a5f;
     padding: 1rem 1.25rem;
     color: #5b6b7f;
     font-size: 0.85rem;
-    box-shadow: 0 6px 16px rgba(30, 58, 95, 0.12);
-    transition: transform 0.25s, box-shadow 0.25s;
-}
-
-/* efecto flotante: al pasar el mouse la tarjeta sube y la sombra crece */
-.indicador:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 28px rgba(30, 58, 95, 0.2);
 }
 
 .indicador .numero {
@@ -804,7 +757,6 @@ select:focus {
     text-decoration: none;
     border-radius: 8px;
     padding: 0.3rem;
-    transition: background-color 0.2s;
 }
 
 .columna-item:hover {
@@ -940,11 +892,6 @@ select:focus {
     font-weight: bold;
     color: #5b6b7f;
     cursor: pointer;
-    transition: color 0.2s, border-color 0.2s;
-}
-
-.pestana:hover {
-    color: #1e3a5f;
 }
 
 .pestana.activa {
@@ -968,11 +915,8 @@ select:focus {
 .tarjeta-prestamo {
     display: flex;
     gap: 1rem;
-    background-color: #ffffff;
     border-left: 6px solid #e1ecfb;
-    border-radius: 12px;
     padding: 1.1rem;
-    box-shadow: 0 2px 8px rgba(30, 58, 95, 0.08);
 }
 
 .tarjeta-prestamo p {
@@ -1024,22 +968,9 @@ select:focus {
 .mensaje-error { background-color: #1b2a3d; }
 .mensaje-alerta { background-color: #1e3a5f; }
 
-/* setup */
+/* lista con viñetas de la portada */
 .lista {
     margin: 0.5rem 0 1rem 1.5rem;
-}
-
-.registro {
-    list-style: none;
-    margin-top: 1rem;
-    padding: 1rem;
-    max-height: 340px;
-    overflow: auto;
-    background-color: #1b2a3d;
-    color: #eef2f7;
-    border-radius: 8px;
-    font-family: Consolas, monospace;
-    font-size: 0.85rem;
 }
 
 /* pie */
@@ -1054,7 +985,6 @@ select:focus {
     margin: 0;
     font-family: 'Merriweather', Georgia, serif;
     font-size: 1rem;
-    letter-spacing: 2px;
 }
 
 /* ajustes para celulares chicos */

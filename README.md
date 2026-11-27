@@ -1,16 +1,15 @@
-# Biblioteca Atenea - Sistema de Alquiler y Préstamo de Libros
+# Biblioteca Atenea - Sistema de alquiler y préstamo de libros
 
-TPI 2026 - Programación III - Tema 8
+TPI Tema 8 - Programación III
 
-Sistema web para una biblioteca: los socios exploran el catálogo, piden libros en préstamo y consultan la fecha de devolución. El administrador gestiona los libros, los préstamos y los usuarios, y tiene un dashboard con gráficos.
+Sistema web para una biblioteca: los socios exploran el catálogo, piden libros en préstamo y consultan fecha de devolución. El administrador gestiona libros, los préstamos y los usuarios, y tiene un dashboard con gráficos.
 
-Hecho con HTML, CSS y JavaScript. Los datos se guardan en MockAPI.
+Los datos se guardan en MockAPI.
 
 ## Cómo usarlo
 
-1. Abrir `index.html` en el navegador (o con Live Server desde VS Code).
-2. La primera vez, abrir `setup.html` y tocar "Cargar datos de ejemplo".
-3. Usuarios de prueba:
+1. Abrir `index.html` en el navegador.
+2. Usuarios de prueba:
    - Administrador: admin@biblioteca.com / admin123
    - Socio: maria@test.com / 123456
 
@@ -37,7 +36,6 @@ Como MockAPI no valida contraseñas ni tiene relaciones entre recursos, el login
 - `admin-libros.html`: alta, baja y modificación de libros (admin)
 - `admin-prestamos.html`: cambio de estado de los préstamos (admin)
 - `admin-usuarios.html`: alta de usuarios y cambio de contraseña (admin)
-- `setup.html`: carga de datos de ejemplo
 
 ## Integrantes
 

@@ -152,7 +152,7 @@ function mostrarGraficos(lista) {
     });
     dibujarColumnas('grafico-estados', datosEstados, lista.length);
 
-    // Cruce préstamo -> libro para saber el género y el título
+    // Cruce préstamo: libro para saber el género y el título
     const generos = contar(lista, p => {
         const libro = buscarPorId(libros, p.bookId);
         return libro ? libro.genero : 'Sin dato';
